@@ -1,6 +1,5 @@
 body {
-  background-color: #000;
-  /* background-image: url('./assets/background.png'); */
+  background-color: #ffffff;
   background-size: auto 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -34,4 +33,26 @@ img {
 }
 button {
   cursor: pointer;
+}
+
+@font-face {
+  font-family: "Roboto",
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url("./fonts/Roboto-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto",
+    sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  src: url("./fonts/Roboto-Regular.ttf") format("truetype");}
+    
+@font-face {
+  font-family: "Roboto",
+    sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  src: url("./fonts/Roboto-Bold.ttf") format("truetype");
 }

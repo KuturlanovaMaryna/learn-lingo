@@ -2,50 +2,48 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  height: 48px;
 `;
 
 export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 28px;
+  margin: 4px 0;
 `;
 
-export const StyledLink = styled(Link)`
-  padding: 8px 16px;
-  color: #ffffff; /* White text color */
-  text-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
-  transition:
-    color 0.3s,
-    text-shadow 0.3s;
-
-  &:hover,
-  &:focus {
-    color: #00baff; /* Blue text color on hover/focus */
-    text-shadow:
-      0 0 5px #00baff,
-      0 0 10px #00baff,
-      0 0 20px #00baff,
-      0 0 40px #00baff,
-      0 0 80px #00baff;
+export const LogoStyled = styled(Link)`
+  display:flex;
+  gap: 8px;
+  align-items: center;
   }
 `;
-
-export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
-  display: inline-block;
-  margin-right: 5px;
-  box-shadow:
-    0 0 5px #00baff,
-    0 0 10px #00baff,
-    0 0 20px #00baff,
-    0 0 40px #00baff,
-    0 0 80px #00baff;
+export const LogoName = styled.p`
+  color: #121417;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin: 0;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
 `;
+
+export const LogoImg = styled.img``;
+
+export const StyledLink = styled(Link)`
+font-weight: 400;
+font-size: 16px;
+line-height: 1.25;
+ color: #121417;
+  }
+`;
+export const AuthButtons = styled.div`
+  padding: 20px;
+`;
+export const LogInStyledButton = styled.button``;
+export const RegistrationStyledButton = styled.button``;

@@ -2,39 +2,32 @@ import {
   HeaderContainer,
   Navigation,
   StyledLink,
-  IconWrapper,
+  LogoStyled,
+  LogoName,
+  LogoImg,
+  AuthButtons,
+  LogInStyledButton,
+  RegistrationStyledButton,
 } from './Header.styled';
-import sprite from 'assets/sprite.svg';
+// import sprite from 'assets/sprite.svg';
+import Logo from '../../assets/ukraine-logo.png';
 
 export const Header = () => {
   return (
     <HeaderContainer>
+      <LogoStyled to="/home">
+        <LogoImg src={Logo} alt="LogoUkraine" />
+        <LogoName>LearnLingo</LogoName>
+      </LogoStyled>
       <Navigation>
-        <StyledLink to="/first">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          First
-        </StyledLink>
-        <StyledLink to="/second">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          Second
-        </StyledLink>
-        <StyledLink to="/signup">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          SignUp
-        </StyledLink>
-        <StyledLink to="/signin">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          SignIn
-        </StyledLink>
+        <StyledLink to="/home">Home</StyledLink>
+        <StyledLink to="/teachers">Teachers</StyledLink>
+        <StyledLink to="/favorites">Favorites</StyledLink>
       </Navigation>
+      <AuthButtons>
+        <LogInStyledButton>SignUp</LogInStyledButton>
+        <RegistrationStyledButton>SignIn</RegistrationStyledButton>
+      </AuthButtons>
     </HeaderContainer>
   );
 };
