@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { FiLogIn } from 'react-icons/fi';
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -43,7 +44,41 @@ line-height: 1.25;
   }
 `;
 export const AuthButtons = styled.div`
+  display: flex;
   padding: 20px;
 `;
-export const LogInStyledButton = styled.button``;
-export const RegistrationStyledButton = styled.button``;
+export const LogInStyledButton = styled.button`
+  display: flex;
+  width: 73px;
+  height: 20px;
+  padding: 16px 0;
+  margin-right: 14px;
+  border: none;
+  background-color: transparent;
+
+  &:hover {
+    color:;
+  }
+`;
+export const LogInText = styled.p`
+  font-weight: 700;
+  line-height: 1.25;
+  color: #121417;
+  margin: 0;
+`;
+export const RegistrationStyledButton = styled.button`
+  width: 166px;
+  height: 48px;
+  padding: 14px 39px;
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  background-color: #121417;
+  transition: all 250ms ease;
+  border-radius: 12px;
+`;
+export const Icon = styled(FiLogIn)`
+  stroke: orange;
+`;

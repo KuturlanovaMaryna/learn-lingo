@@ -8,6 +8,8 @@ import {
   AuthButtons,
   LogInStyledButton,
   RegistrationStyledButton,
+  Icon,
+  LogInText,
 } from './Header.styled';
 // import sprite from 'assets/sprite.svg';
 import Logo from '../../assets/ukraine-logo.png';
@@ -25,8 +27,13 @@ export const Header = () => {
         <StyledLink to="/favorites">Favorites</StyledLink>
       </Navigation>
       <AuthButtons>
-        <LogInStyledButton>SignUp</LogInStyledButton>
-        <RegistrationStyledButton>SignIn</RegistrationStyledButton>
+        <LogInStyledButton type="button">
+          <Icon size="20" />
+          <LogInText>Log In</LogInText>
+        </LogInStyledButton>
+        <RegistrationStyledButton type="button">
+          Registration
+        </RegistrationStyledButton>
       </AuthButtons>
     </HeaderContainer>
   );
