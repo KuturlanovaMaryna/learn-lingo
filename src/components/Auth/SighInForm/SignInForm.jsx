@@ -3,43 +3,104 @@ import { useState } from 'react';
 import auth from '../../../firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import * as Yup from 'yup';
+import { Formik, Form } from 'formik';
+import {
+  FormFields,
+  FormField,
+  FormBtn,
+  FormFieldPassvordConteiner,
+  FormFieldPassvord,
+  EyeSvgOpen,
+  EyeSvgClose,
+  Title,
+  Text,
+} from './SignInForm.styled';
 
-export const SignIn = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const initialValues = {
+  email: '',
+  password: '',
+};
+const logInSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Please enter a valid email')
+    .required('Field is required.'),
+  password: Yup.string()
+    .min(8, 'Password must contain 8 characters.')
+    .max(20, 'Password is too Long!')
+    .required('Field is required.'),
+});
 
-  const userLogin = (event) => {
-    event.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
+export const SignIn = ({ onSubmit, closeModal }) => {
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const userLogin = async (values, { resetForm }) => {
+    signInWithEmailAndPassword(auth, values.email, values.password)
       .then((user) => {
         console.log(user);
-        setEmail('');
-        setPassword('');
+        resetForm();
+        closeModal();
 
         toast.success('Login successful');
       })
-      .catch(() => {
-        toast.error("Sorry, couldn't find your account");
+      .catch((error) => {
+        console.log(error);
       });
   };
   return (
     <div>
-      <form>
-        <h2>Log In</h2>
-        <input
-          value={email}
-          placeholder="Email"
-          onChange={(event) => setEmail(event.target.value)}
-          type="email"
-        />
-        <input
-          value={password}
-          placeholder="password"
-          onChange={(event) => setPassword(event.target.value)}
-          type="password"
-        />
-        <button onClick={userLogin}>Login</button>
-      </form>
+      <Formik
+        initialValues={initialValues}
+        validationSchema={logInSchema}
+        onSubmit={userLogin}
+      >
+        {({ errors, touched }) => (
+          <Form>
+            <FormFields>
+              <Title>Log In</Title>
+              <Text>
+                Welcome back! Please enter your credentials to access your
+                account and continue your search for an teacher.
+              </Text>
+              <FormField
+                name="email"
+                type="email"
+                placeholder="Email"
+                error={errors.email && touched.email ? 'true' : 'false'}
+              />
+
+              <FormFieldPassvordConteiner>
+                <FormFieldPassvord
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Password"
+                  error={errors.password && touched.password ? 'true' : 'false'}
+                />
+
+                {showPassword ? (
+                  <EyeSvgOpen
+                    width={20}
+                    height={20}
+                    onClick={togglePasswordVisibility}
+                  ></EyeSvgOpen>
+                ) : (
+                  <EyeSvgClose
+                    width={20}
+                    height={20}
+                    onClick={togglePasswordVisibility}
+                  ></EyeSvgClose>
+                )}
+              </FormFieldPassvordConteiner>
+
+              <FormBtn type="submit">Log In</FormBtn>
+            </FormFields>
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 };
