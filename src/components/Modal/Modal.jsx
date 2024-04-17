@@ -1,41 +1,54 @@
-import ReactDOM from 'react-dom';
-import { useEffect } from 'react';
-import { Modal } from './PortalModal.styled';
+import { useEffect, useState } from 'react';
+import { StyledModal, CloseIcon, ModalBlok, CloseButton } from './Modal.styled';
+import { SignIn } from '../Auth/SighInForm/SignInForm';
+import { SignUp } from '../Auth/SignUpForm/SignUpForm';
 
-export default function PortalModal({ active, setActive, children }) {
+const Modal = ({ closeModal, onLoginClick, onRegisterClick }) => {
+  const [showLogin, setShowLogin] = useState(false);
+  const [showRegistration, setShowRegistration] = useState(false);
+
   useEffect(() => {
-    const closeModal = (e) => {
-      if (e.key === 'Escape') {
-        setActive(false);
+    const handleKeyDown = (event) => {
+      if (event.code === 'Escape') {
+        closeModal();
       }
     };
 
-    const handleBodyScroll = (disableScroll) => {
-      if (disableScroll) {
-        document.body.classList.add('no-scroll');
-      } else {
-        document.body.classList.remove('no-scroll');
-      }
-    };
-
-    if (active) {
-      document.addEventListener('keydown', closeModal);
-      handleBodyScroll(true);
-    } else {
-      document.removeEventListener('keydown', closeModal);
-      handleBodyScroll(false);
-    }
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
 
     return () => {
-      document.removeEventListener('keydown', closeModal);
-      handleBodyScroll(false);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'auto';
     };
-  }, [active, setActive]);
+  }, [closeModal]);
 
-  return ReactDOM.createPortal(
-    <Modal className={active ? 'active' : ''} onClick={() => setActive(false)}>
-      <div onClick={(e) => e.stopPropagation()}>{children}</div>
-    </Modal>,
-    document.getElementById('modal')
+  const handleOverayClick = (event) => {
+    if (event.target === event.currentTarget) {
+      closeModal();
+    }
+  };
+  useEffect(() => {
+    if (onLoginClick) {
+      setShowLogin(true);
+      setShowRegistration(false);
+    } else if (onRegisterClick) {
+      setShowLogin(false);
+      setShowRegistration(true);
+    }
+  }, [onLoginClick, onRegisterClick]);
+
+  return (
+    <StyledModal onClick={handleOverayClick}>
+      <ModalBlok>
+        <CloseButton onClick={() => closeModal(false)} className="closeBtn">
+          <CloseIcon />
+        </CloseButton>
+        {showLogin && <SignIn />}
+        {showRegistration && <SignUp />}
+      </ModalBlok>
+    </StyledModal>
   );
-}
+};
+
+export default Modal;
