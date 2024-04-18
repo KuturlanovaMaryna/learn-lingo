@@ -38,7 +38,7 @@ export const Header = () => {
         <LogoName>LearnLingo</LogoName>
       </LogoStyled>
       <Navigation>
-        <StyledLink to="/home">Home</StyledLink>
+        <StyledLink to="/">Home</StyledLink>
         <StyledLink to="/teachers">Teachers</StyledLink>
         <StyledLink to="/favorites">Favorites</StyledLink>
       </Navigation>

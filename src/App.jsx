@@ -1,13 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
+import HomePage from './pages/HomePage/HomePage';
+import TeachersPage from './pages/TeachersPage/TeachersPage';
+import FavoritePage from './pages/FavoritePage/FavoritePage';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 import { ToastContainer } from 'react-toastify';
-import { SignUp } from './components/Auth/SignUpForm/SignUpForm';
-import { SignIn } from './components/Auth/SighInForm/SignInForm';
 
 const test = import.meta.env.VITE_API_TEST;
 
@@ -17,16 +15,13 @@ function App() {
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
-          </Route>
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/signin" element={<SignIn />} />
+          <Route index element={<HomePage />} />
+          <Route path="/teachers" element={<TeachersPage />} />
+          <Route path="/favorites" element={<FavoritePage />} />
           <Route path="*" element={<ErrorPage />} />
         </Route>
       </Routes>
-      <ToastContainer />
+      <ToastContainer autoClose={1000} />
     </AppWrapper>
   );
 }

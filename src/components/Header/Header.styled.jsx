@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { FiLogIn } from 'react-icons/fi';
 
@@ -38,11 +38,14 @@ export const LogoName = styled.p`
 
 export const LogoImg = styled.img``;
 
-export const StyledLink = styled(Link)`
-font-weight: 400;
-font-size: 16px;
-line-height: 1.25;
- color: #121417;
+export const StyledLink = styled(NavLink)`
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #121417;
+  &.active {
+    color: #9fbaae;
+    text-decoration: underline;
   }
 `;
 export const AuthButtons = styled.div`
