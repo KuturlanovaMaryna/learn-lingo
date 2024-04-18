@@ -6,8 +6,10 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 0;
-  height: 48px;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1184px;
 `;
 
 export const Navigation = styled.nav`
