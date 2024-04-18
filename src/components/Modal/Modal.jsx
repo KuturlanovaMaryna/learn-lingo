@@ -45,7 +45,7 @@ const Modal = ({ closeModal, onLoginClick, onRegisterClick }) => {
           <CloseIcon />
         </CloseButton>
         {showLogin && <SignIn closeModal={closeModal} />}
-        {showRegistration && <SignUp />}
+        {showRegistration && <SignUp closeModal={closeModal} />}
       </ModalBlok>
     </StyledModal>
   );

@@ -6,8 +6,8 @@ import HalfPage from 'pages/HalfPage/HalfPage';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 import { ToastContainer } from 'react-toastify';
-import { SignUp } from './components/Auth/SignUp';
-import { SignIn } from './components/Auth/SignIn';
+import { SignUp } from './components/Auth/SignUpForm/SignUpForm';
+import { SignIn } from './components/Auth/SighInForm/SignInForm';
 
 const test = import.meta.env.VITE_API_TEST;
 

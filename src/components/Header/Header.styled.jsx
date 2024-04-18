@@ -49,6 +49,7 @@ export const AuthButtons = styled.div`
 `;
 export const LogInStyledButton = styled.button`
   display: flex;
+  gap: 4px;
   width: 73px;
   height: 20px;
   padding: 16px 0;
@@ -80,5 +81,5 @@ export const RegistrationStyledButton = styled.button`
   border-radius: 12px;
 `;
 export const Icon = styled(FiLogIn)`
-  stroke: orange;
+  stroke: #9fbaae;
 `;

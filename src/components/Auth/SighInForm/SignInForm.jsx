@@ -31,7 +31,7 @@ const logInSchema = Yup.object().shape({
     .required('Field is required.'),
 });
 
-export const SignIn = ({ onSubmit, closeModal }) => {
+export const SignIn = ({ closeModal }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
@@ -48,7 +48,7 @@ export const SignIn = ({ onSubmit, closeModal }) => {
         toast.success('Login successful');
       })
       .catch((error) => {
-        console.log(error);
+        toast.error({ error });
       });
   };
   return (
@@ -83,14 +83,12 @@ export const SignIn = ({ onSubmit, closeModal }) => {
 
                 {showPassword ? (
                   <EyeSvgOpen
-                    width={20}
-                    height={20}
+                    size="20"
                     onClick={togglePasswordVisibility}
                   ></EyeSvgOpen>
                 ) : (
                   <EyeSvgClose
-                    width={20}
-                    height={20}
+                    size="20"
                     onClick={togglePasswordVisibility}
                   ></EyeSvgClose>
                 )}
