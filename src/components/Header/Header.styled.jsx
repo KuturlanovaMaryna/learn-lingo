@@ -7,7 +7,7 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 20px;
+
   margin: 0 auto;
   max-width: 1184px;
 `;

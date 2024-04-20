@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { useState } from 'react';
-import auth from '../../../firebase';
+import { auth } from '../../../firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import * as Yup from 'yup';

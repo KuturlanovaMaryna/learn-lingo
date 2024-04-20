@@ -24,7 +24,6 @@ export const ContainerGreeting = styled.div`
   margin-bottom: 24px;
 `;
 
-////////////  ContainerMainInf  //////////////////////////////////
 export const ContainerMainInf = styled.div`
   box-sizing: border-box;
   max-width: 720px;

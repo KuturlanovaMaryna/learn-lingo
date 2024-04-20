@@ -1,16 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import HomePage from './pages/HomePage/HomePage';
-import TeachersPage from './pages/TeachersPage/TeachersPage';
+import { TeachersPage } from './pages/TeachersPage/TeachersPage';
 import FavoritePage from './pages/FavoritePage/FavoritePage';
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
 import { ToastContainer } from 'react-toastify';
 
-const test = import.meta.env.VITE_API_TEST;
-
 function App() {
-  console.log(test);
   return (
     <AppWrapper>
       <Routes>
