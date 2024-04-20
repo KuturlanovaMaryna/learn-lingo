@@ -3163,9 +3163,13 @@ attempted value: ${o}
 `,P5=$(Uj)`
   fill: #38cd3e;
   position: absolute;
-  top: 17px;
-  right: 17px;
-`,R5=({card:t})=>{const{avatar_url:e,name:n,surname:r}=t;return k.jsx(I5,{children:k.jsx(x5,{children:k.jsxs(k5,{children:[k.jsx(b5,{src:e,alt:`${n} ${r}`}),k.jsx(P5,{})]})})})},A5="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";let N5=(t=21)=>{let e="",n=crypto.getRandomValues(new Uint8Array(t));for(;t--;)e+=A5[n[t]&63];return e};const O5=$.div`
+  top: 12px;
+  right: 16px;
+  stroke: #fff;
+  stroke-width: 2px;
+
+  border-radius: 100px;
+`,R5=({card:t})=>{const{avatar_url:e,name:n,surname:r}=t;return k.jsx(I5,{children:k.jsx(x5,{children:k.jsxs(k5,{children:[k.jsx(b5,{src:e,alt:`${n} ${r}`}),k.jsx(P5,{size:"20"})]})})})},A5="useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict";let N5=(t=21)=>{let e="",n=crypto.getRandomValues(new Uint8Array(t));for(;t--;)e+=A5[n[t]&63];return e};const O5=$.div`
   background: #f8f8f8;
 `,D5=$.ul`
   display: flex;
