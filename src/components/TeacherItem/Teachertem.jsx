@@ -14,7 +14,7 @@ export const TeacherItem = ({ card }) => {
       <ImageWrapper>
         <PhotoFrame>
           <TeacherPhoto src={avatar_url} alt={`${name} ${surname}`} />
-          <GreenDot />
+          <GreenDot size="20" />
         </PhotoFrame>
       </ImageWrapper>
     </Card>

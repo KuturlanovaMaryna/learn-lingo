@@ -30,6 +30,10 @@ export const TeacherPhoto = styled.img`
 export const GreenDot = styled(GoDotFill)`
   fill: #38cd3e;
   position: absolute;
-  top: 17px;
-  right: 17px;
+  top: 12px;
+  right: 16px;
+  stroke: #fff;
+  stroke-width: 2px;
+
+  border-radius: 100px;
 `;
