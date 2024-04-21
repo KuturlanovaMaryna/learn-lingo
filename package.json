@@ -48,5 +48,6 @@
   "lint-staged": {
     "*.{js,jsx}": "eslint --cache --fix",
     "*./src": "prettier --write"
-  }
+  },
+  "homepage": "https://learnlingvo.netlify.app/"
 }
