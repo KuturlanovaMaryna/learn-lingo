@@ -8,6 +8,7 @@ import { AppWrapper } from './App.styled';
 import { ToastContainer } from 'react-toastify';
 
 function App() {
+  console.log(import.meta.env);
   return (
     <AppWrapper>
       <Routes>
