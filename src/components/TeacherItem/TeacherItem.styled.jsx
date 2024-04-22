@@ -10,9 +10,7 @@ export const Card = styled.div`
   display: flex;
   gap: 48px;
 `;
-export const ImageWrapper = styled.div`
-  padding: 24px;
-`;
+export const ImageWrapper = styled.div``;
 export const PhotoFrame = styled.div`
   width: 120px;
   height: 120px;
@@ -40,9 +38,11 @@ export const GreenDot = styled(GoDotFill)`
   border-radius: 100px;
 `;
 export const InfoWrapper = styled.div`
+  font-weight: 500;
+`;
+export const InfoBottomWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  margin-bottom: 8px;
+  margin-bottom: 32px;
 `;
 export const NameBlock = styled.div``;
 export const Title = styled.p`
@@ -56,14 +56,66 @@ export const FullName = styled.p`
   font-size: 24px;
   line-height: 100%;
   color: #121417;
+  margin: 0;
 `;
 export const MainInfo = styled.div`
   display: flex;
-  margin-left: 100px;
+  margin-left: 110px;
 `;
 export const MainBlockInfo = styled.span`
   display: inline-flex;
 
   padding-left: 16px;
   padding-right: 16px;
+`;
+export const BlockSkills = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+`;
+
+export const BlockShortInformationsTeacher = styled.div`
+  display: flex;
+  gap: 2px;
+  margin-bottom: 8px;
+`;
+export const LanguagesUnderlined = styled.p`
+  text-decoration: underline;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+`;
+export const AditionalInfo = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+`;
+export const Subtitle = styled.h3`
+  color: #8a8a89;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+`;
+export const LevelsList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.14;
+`;
+
+export const LevelLanguage = styled.li`
+  padding: 8px 12px;
+  border-radius: 35px;
+  border: 1px solid rgba(18, 20, 23, 0.2);
+
+  &:first-child {
+    border-color: transparent;
+    background: #9fbaae;
+  }
 `;
