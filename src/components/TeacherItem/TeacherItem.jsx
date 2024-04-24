@@ -18,12 +18,23 @@ import {
   AditionalInfo,
   LevelsList,
   LevelLanguage,
+  NotFavoriteIcon,
+  FavoriteIcon,
+  Favorite,
 } from './TeacherItem.styled';
 import { IoBookOutline } from 'react-icons/io5';
 import { RxDividerVertical } from 'react-icons/rx';
 import { IoMdStar } from 'react-icons/io';
+import { useDispatch } from 'react-redux';
+// import { useState } from 'react';
 
-export const TeacherItem = ({ card }) => {
+import {
+  addToFavorite,
+  removeFromFavorite,
+} from '../../redux/favorites/favorite.slice';
+import { useState } from 'react';
+
+const TeacherItem = ({ card }) => {
   const {
     avatar_url,
     name,
@@ -36,7 +47,13 @@ export const TeacherItem = ({ card }) => {
     conditions,
     levels,
   } = card;
+  const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch();
 
+  const handleToggleFavorite = () => {
+    setIsChecked(!isChecked);
+    dispatch(isChecked ? removeFromFavorite(card) : addToFavorite(card));
+  };
   return (
     <Card>
       <ImageWrapper>
@@ -70,11 +87,19 @@ export const TeacherItem = ({ card }) => {
               Price / 1 hour: <span color="#38cd3e">{price_per_hour}$</span>
             </MainBlockInfo>
           </MainInfo>
+          <Favorite onClick={handleToggleFavorite}>
+            {!isChecked ? (
+              <NotFavoriteIcon size={20} />
+            ) : (
+              <FavoriteIcon size={20} />
+            )}
+          </Favorite>
         </InfoBottomWrapper>
+
         <BlockSkills>
           <BlockShortInformationsTeacher>
             <Subtitle>Speaks:</Subtitle>
-            <LanguagesUnderlined>{languages.join(', ')}</LanguagesUnderlined>
+            <LanguagesUnderlined>{languages.join(',')}</LanguagesUnderlined>
           </BlockShortInformationsTeacher>
 
           <BlockShortInformationsTeacher>
@@ -96,3 +121,5 @@ export const TeacherItem = ({ card }) => {
     </Card>
   );
 };
+
+export default TeacherItem;

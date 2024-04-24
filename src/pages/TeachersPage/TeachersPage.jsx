@@ -8,7 +8,7 @@ import {
   endBefore,
 } from 'firebase/database';
 import { db } from '../../firebase';
-import { TeacherItem } from '../../components/TeacherItem/Teachertem';
+import TeacherItem from '../../components/TeacherItem/TeacherItem';
 import { nanoid } from 'nanoid';
 import { CardWrapper, StyledPage } from './TeachersPage.styled';
 

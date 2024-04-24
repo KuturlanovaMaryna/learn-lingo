@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 import { GoDotFill } from 'react-icons/go';
+import { FaRegHeart } from 'react-icons/fa6';
+import { FaHeart } from 'react-icons/fa6';
 
 export const Card = styled.div`
   width: 1148px;
@@ -58,24 +60,24 @@ export const FullName = styled.p`
   color: #121417;
   margin: 0;
 `;
-export const MainInfo = styled.div`
+export const MainInfo = styled.ul`
   display: flex;
-  margin-left: 110px;
+  margin-left: 100px;
 `;
-export const MainBlockInfo = styled.span`
+export const MainBlockInfo = styled.li`
   display: inline-flex;
 
   padding-left: 16px;
   padding-right: 16px;
 `;
-export const BlockSkills = styled.div`
+export const BlockSkills = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 16px;
 `;
 
-export const BlockShortInformationsTeacher = styled.div`
+export const BlockShortInformationsTeacher = styled.li`
   display: flex;
   gap: 2px;
   margin-bottom: 8px;
@@ -118,4 +120,23 @@ export const LevelLanguage = styled.li`
     border-color: transparent;
     background: #9fbaae;
   }
+`;
+export const Favorite = styled.button`
+  display: inline-flex;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+`;
+export const NotFavoriteIcon = styled(FaRegHeart)`
+  fill: #9fbaae;
+
+  stroke: #9fbaae;
+  stroke-width: 2px;
+  border-radius: 100px;
+`;
+export const FavoriteIcon = styled(FaHeart)`
+  fill: #9fbaae;
+  stroke: #9fbaae;
+  stroke-width: 2px;
+  border-radius: 100px;
 `;

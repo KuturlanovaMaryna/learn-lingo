@@ -33,7 +33,7 @@ export const Header = () => {
   };
   return (
     <HeaderContainer>
-      <LogoStyled to="/home">
+      <LogoStyled to="/">
         <LogoImg src={Logo} alt="LogoUkraine" />
         <LogoName>LearnLingo</LogoName>
       </LogoStyled>
